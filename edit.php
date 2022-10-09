@@ -2,7 +2,7 @@
            $pdo = new PDO("mysql:host=localhost;dbname=blueshop;charset=utf8", "root", "");
            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$stmt = $pdo->prepare("UPDATE member SET ?,?,?,?,?,?
+$stmt = $pdo->prepare("UPDATE member SET password=?,name=?,address=?,mobile=?,email=?,username=?
 WHERE username=?");
            $stmt->bindParam(1, $_POST["username"]);
            $stmt->bindParam(2, $_POST["password"]);
